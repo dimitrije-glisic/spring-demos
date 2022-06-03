@@ -1,0 +1,14 @@
+-Start cluster and expose port
+minikube start
+kubectl apply -f deployment.yaml
+kubectl port-forward <POD_NAME> 8080:8080
+
+
+-Access API:
+
+curl localhost:8080/hello?name=Dimitrije
+
+Expected response: Hello Dimitrije!
+
+
+*Note: tested on Ubuntu 20.04
